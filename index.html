@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Henry Cort</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Orbitron:wght@500&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><button id="theme-toggle">🌙 Toggle Theme</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Welcome to My Website!</h1>
+      <p>This is my personal site where I share more about who I am and the cool things I’ve built.</p>
+      <p> Below are some photos I took/enjoy the vibe of!</p>
+      <!-- Optional: Add a fun quote or motto below -->
+    </section>
+  </main>
+
+  <hr />
+    <div class="icon-divider">
+        <span>🚀</span> <span>👨‍💻</span> <span>🎮</span>
+        </div>
+ <hr />
+
+    <div class="gallery">
+        <img src="images/clouds.jpeg" alt="Photo of your pet" />
+        <img src="images/27D19EFB-E511-433C-AF09-744DF0EB2062.jpeg" alt="Photo of your pet" />
+        <img src="images/BAC55001-D0EA-4DA7-9E75-38CE396E7288.jpeg" alt="Photo of your pet" />
+        <img src="images/DCE625CA-3549-416A-9733-25FDC8B995D2.jpeg" alt="Photo of your pet" />
+        <img src="images/DEEF5E45-F1BE-4F28-8687-D8975658F506.jpeg" alt="Photo of your pet" />
+        <img src="images/new york.jpeg" alt="Photo of your pet" />
+        <img src="images/IMG_2078.jpeg" alt="Photo of your pet" />
+        <img src="images/IMG_4632.jpeg" alt="Photo of your pet" />
+        <img src="images/IMG_5284.jpeg" alt="Photo of your pet" />
+        <img src="images/IMG_5427.jpg" alt="Photo of your pet" />
+        <img src="images/IMG_6764.jpg" alt="Photo of your pet" />
+        <img src="images/black car.jpeg" alt="Photo of your pet" />
+        <img src="images/retro wall.jpeg" alt="Photo of your pet" />
+        <img src="images/sean-foley-793204-unsplash.jpg" alt="Photo of your pet" />
+    </div>
+
+    <section class="map-section fade-in">
+        <h2>Where I'm From 🏠</h2>
+        <div id="map"></div>
+      </section>
+      
+    <a href="projects.html" class="btn">Check Out My Projects 🚀</a>
+
+    <section class="contact">
+        <h2>Let’s Connect</h2>
+        <p>📧 hcort@quinnipiac.edu</p>
+        <p><a href="https://www.linkedin.com/in/henry-cort-291252332/" target="_blank">LinkedIn</a> | <a href="https://github.com/hcort26" target="_blank">GitHub</a></p>
+      </section>      
+
+      <!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Map Setup + Theme Toggle -->
+    <script>
+    // === Interactive Map ===
+    const map = L.map('map').setView([41.3959, -72.8968], 13); // Hamden coords
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([41.3959, -72.8968])
+        .addTo(map)
+        .bindPopup('Hamden, CT – My Hometown!')
+        .openPopup();
+    </script>
+
+<script>
+    // === Load saved theme from localStorage ===
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  
+    // === Theme toggle logic ===
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', mode);
+      });
+    }
+  </script>
+  
+
+  <footer>
+    <p>&copy; 2025 Henry Cort</p>
+  </footer>
+</body>
+</html>

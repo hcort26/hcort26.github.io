@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Your Name</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Orbitron:wght@500&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><button id="theme-toggle">🌙 Toggle Theme</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="projects">
+      <h1>My Projects</h1>
+  
+      <div class="project">
+        <h2>Multi-Player Trivia Game Project</h2>
+        <p>
+          This project involves the development of a multi-player trivia game that can be played over the network. The game incorporates various computer science concepts such as concurrency control, socket programming, GUI design, and network communication. The project is divided into two phases.
+        </p>
+  
+        <div class="gallery-four">
+          <img src="images/Screenshot 2024-04-04 at 6.47.03 PM.png" alt="Trivia Game Screenshot 1" />
+          <img src="images/Screenshot 2024-04-04 at 6.47.16 PM.png" alt="Trivia Game Screenshot 2" />
+          <img src="images/Screenshot 2024-04-04 at 6.47.50 PM.png" alt="Trivia Game Screenshot 3" />
+          <img src="images/Screenshot 2024-04-04 at 6.48.02 PM.png" alt="Trivia Game Screenshot 4" />
+        </div>
+  
+        <a href="https://github.com/hcort26/NWP2" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </section>
+  </main>
+  
+
+  <div class="project centered">
+    <h2>SER225 Platformer Game</h2>
+    <p>
+        This is a platformer game with the goal of traversing through each platforming to finish the game. There are various kinds of enemies and obstacles that you will need to avoid. There are six levels that you need to complete to finish the game. There are also coins on each level for you to collect.
+    </p>
+  
+    <div class="project-video">
+      <video controls width="100%" poster="images/cover-image.png">
+        <source src="images/fullpreviewlabrun.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  
+    <a href="https://github.com/Kmschro/DreamTeam2" target="_blank" class="btn">View on GitHub</a>
+  </div>
+  
+  <script>
+    // === Load saved theme from localStorage ===
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  
+    // === Theme toggle logic ===
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', mode);
+      });
+    }
+  </script>
+  
+
+  </body>
+  
