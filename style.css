@@ -226,3 +226,43 @@ body {
     font-family: 'Orbitron', sans-serif;
   }
   
+  /* === About Section Hover === */
+  .image-hover {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .image-hover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .image-hover:hover img {
+    transform: scale(1.05);
+    filter: brightness(60%);
+  }
+  
+  .hover-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #f0f0f0;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  
+  .image-hover:hover .hover-text {
+    opacity: 1;
+  }
+  
